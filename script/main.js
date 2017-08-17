@@ -3,6 +3,8 @@
 
 window.onload = function () { 
     createTable();
+    insertCardText();
+    insertCards();
 }
 
 
@@ -53,7 +55,7 @@ var Ueberschrift2= "<p>stimmt nicht &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nb
 
 var imgArrow= "<img  src='images/double-arrow.png'>"
 
-var Skala = "0 1 2 3 4 5 6";
+var Skala = "0 &nbsp;&nbsp;&nbsp; 1 &nbsp;&nbsp;&nbsp; 2 &nbsp;&nbsp;&nbsp; 3 &nbsp;&nbsp;&nbsp; 4 &nbsp;&nbsp;&nbsp; 5 &nbsp;&nbsp;&nbsp; 6";
 
 
 
@@ -92,3 +94,55 @@ var Fragen = ["Das Leben gelingt besser, wenn man das Positive sieht, anstatt si
 
 
 
+// // für bootstrap cards content
+
+
+//     //   for (i=1; i<Fragen.length; i++){
+
+//     //     {  
+  
+//     //     text +=        i + ". " ;
+//     //     tempTable += Fragen[i]; 
+    
+//     //     }
+
+
+function insertCardText()
+{
+    document.getElementById("card1t").innerHTML += Fragen[0];
+    document.getElementById("card2t").innerHTML += Fragen[1];
+}
+
+
+
+
+
+function insertCards(){
+
+    var tempCards = "";
+
+    for (i=1; i<Fragen.length; i++){
+
+        tempCards += "<div id='card" + i +"'";
+        tempCards +=  "class='card'";
+        tempCards += "<div class='card-block'>";
+        tempCards +=  "<h4 class='card-title'>";
+        tempCards +=  i + ". ";
+        tempCards += "</h4>";
+        tempCards += "<p class='card-text'>";
+        tempCards += Fragen[i];
+        tempCards += "</p>";
+        tempCards += "<a href='#' class='btn btn-primary'>Go somewhere</a>";
+        tempCards += "</div>";
+        tempCards += "</div>";
+    }
+
+document.getElementById("textcards").innerHTML += tempCards;
+}
+
+
+
+
+
+
+ 

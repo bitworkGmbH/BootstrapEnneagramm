@@ -34,6 +34,32 @@ table td + td{  /* this will go to the 2nd column of the table directly */
     font-weight: bold;
 }
 
+/* all cards */
+
+#textcards {
+
+    width: 20rem;
+}
+
+/* 
+individual cards  */
+
+ #cardx {
+    width: 20rem;
+    border-color:salmon;
+} 
+
+#cardy{
+    width: 20rem; 
+    background-color:lightpink;
+}
+
+
+#card1{
+   background-color:aqua;  
+}
+
+
 
 @media (max-width: 800px) {
   /* Smartphone    */
@@ -42,11 +68,6 @@ th, td {
        font-size-adjust: 0.4;
     }   
 
-/* table { 
-    background-color: orange;
-    width: auto;    
-}    */
-   
 .image{
        width: 25%;
        height: auto;

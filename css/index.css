@@ -1,0 +1,32 @@
+/* content überschrieben, weil layout anders*/
+
+.content{
+  margin-left: auto; 
+  margin-right: auto;
+  text-align: center;
+  width: 50%;
+  padding-top: 6em 
+ }
+
+ /* Formatierung Startbutton als einheitliche Klasse */
+
+.button{
+    background-color: grey;
+    border: none;
+    color: black;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px; 
+    font-weight: bold;
+    font-style: italic;
+}
+
+.button:hover { 
+  background-color: LightSteelBlue; 
+}
+.button:active { 
+  background-color: darkgrey;
+}
+

@@ -54,6 +54,11 @@ individual cards  */
     background-color:lightpink;
 }
 
+#cardz{
+    width: 20rem; 
+    border-color:teal;
+}
+
 
 #card1{
    background-color:aqua;  

@@ -97,23 +97,12 @@ var Fragen = ["Das Leben gelingt besser, wenn man das Positive sieht, anstatt si
 // // für bootstrap cards content
 
 
-//     //   for (i=1; i<Fragen.length; i++){
-
-//     //     {  
-  
-//     //     text +=        i + ". " ;
-//     //     tempTable += Fragen[i]; 
-    
-//     //     }
-
-
 function insertCardText()
 {
-    document.getElementById("card1t").innerHTML += Fragen[0];
-    document.getElementById("card2t").innerHTML += Fragen[1];
+    document.getElementById("card1t").innerHTML += "<b>" + Fragen[0] + "<b>";
+    document.getElementById("card2t").innerHTML += "<b>" + Fragen[1] + "<b>";
+    document.getElementById("card3t").innerHTML += "<b>"+ Fragen[2] + "<b>";
 }
-
-
 
 
 

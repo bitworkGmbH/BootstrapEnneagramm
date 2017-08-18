@@ -3,9 +3,9 @@
 
 window.onload = function () { 
     createTable();
-    insertCards();
-    createRadioButtons();
-}
+    // insertCards();
+    createCards();
+    }
 
 
     // create table with for loop and html table tags
@@ -25,12 +25,12 @@ function createTable(){
 
   
  // Für jede Frage, erstellen wir eine neue Zelle für den Fragenteil und für den Antwortteil.
-    for (j=1; j<Fragen.length; j++){
+    for (j=0; j<=Fragen.length -1; j++){
 
         
         tempTable += "<tr>";
         tempTable +=    "<td>";
-        tempTable +=        j + ". " ;
+        tempTable +=        j+1 + ". " ;
         tempTable +=        Fragen[j]; 
         tempTable +=    "</td>" ;
         tempTable +=    "<td>" ;
@@ -92,68 +92,42 @@ var Fragen = ["Das Leben gelingt besser, wenn man das Positive sieht, anstatt si
 
 
 
+// create cards dynamically:
 
 
+function createCards() {
 
+        // create card with question and number:
 
+    for (i = 1; i <= Fragen.length ; i++) {
+        var cardObject = document.createElement('div');
+        cardObject.className = "card";
+        cardObject.innerHTML += "<h4 class='card-title'>" + i + "</h4>" + "<p class= 'card-text'>" + Fragen[i-1] + "</h4>";
+        cardObject.innerHTML += "<form>";
 
-function insertCards(){
+        //  create six radio-button labels with unique ids for each card:
 
-    var tempCards = "";
-    var tempRadioButton = "";
+        for (count = 1; count <= 6; count++) {
+            cardObject.innerHTML += "<label class= 'radio-inline' id= 'newRadioButton" + i + "_" + count + "'></label>";
+        }
+        cardObject.innerHTML += "</form>";
 
+        // insert code into Dom
 
+        document.getElementById("test").appendChild(cardObject);
 
-    for (i=1; i<=6; i++){
+        // create 6 radio buttons for each card plus its number(scale 1-6) and add to dom:
 
-        tempRadioButton +=  "<form>"
-        tempRadioButton +=  "<label class='radio-inline'>"
-        tempRadioButton +=  "<input type='radio' name='optradio'>" + i
-        tempRadioButton +=  "</label>"
-        tempRadioButton  +=   "</form>"
-
-   }
-    
-
-    for (i=1; i<Fragen.length; i++){
-
-
-              
-
-        tempCards += "<div id='card" + i +"'";
-        tempCards +=  "class='card'";
-        tempCards += "<div class='card-block'>";
-        tempCards +=  "<h4 class='card-title'>";
-        tempCards +=  i + ". ";
-        tempCards += "</h4>";
-        tempCards += "<p class='card-text'>";
-        tempCards += Fragen[i];
-        tempCards += "</p>";
-        tempCards += "<div class= 'container'><div class= 'row'><div class='col-sm-6'>stimmt</div>" +  "<div class='col-sm-6'>stimmt nicht</div></div></div>";
-        tempCards += tempRadioButton;
-        tempCards += "</div>";
-        tempCards += "</div>";
+        for (count = 1; count <= 6; count++) {
+            var id = i + "_" + count;
+            var radioInput = document.createElement('input');
+            radioInput.setAttribute('type', 'radio');
+            radioInput.setAttribute('name', 'optradio');
+            radioInput.setAttribute('value', 'button' + id);
+            document.getElementById("newRadioButton" + id).appendChild(radioInput);
+            document.getElementById("newRadioButton" + id).appendChild(document.createTextNode(count + "."))
+        }
     }
-
-document.getElementById("textcards").innerHTML += tempCards;
 }
 
 
-
-
-// create Radio Buttons dynamically: 
-
-function createRadioButtons(){
-
-    for (i=1; i<=6; i++)
-{
-    var radioInput = document.createElement('input');
-    radioInput.setAttribute('type', 'radio');
-    radioInput.setAttribute('name', "optradio");
-    radioInput.setAttribute('value', 'button' + i);
-    document.getElementById("newRadioButtons").appendChild(radioInput);
-    document.getElementById("newRadioButtons").appendChild(document.createTextNode(i + "." ))
-}
-
-}
- 

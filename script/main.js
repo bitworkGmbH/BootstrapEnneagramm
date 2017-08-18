@@ -3,7 +3,6 @@
 
 window.onload = function () { 
     createTable();
-    insertCardText();
     insertCards();
 }
 
@@ -94,23 +93,31 @@ var Fragen = ["Das Leben gelingt besser, wenn man das Positive sieht, anstatt si
 
 
 
-// // für bootstrap cards content
-
-
-function insertCardText()
-{
-    document.getElementById("card1t").innerHTML += "<b>" + Fragen[0] + "<b>";
-    document.getElementById("card2t").innerHTML += "<b>" + Fragen[1] + "<b>";
-    document.getElementById("card3t").innerHTML += "<b>"+ Fragen[2] + "<b>";
-}
 
 
 
 function insertCards(){
 
     var tempCards = "";
+    var tempRadioButton = "";
+
+
+
+    for (i=1; i<=6; i++){
+
+        tempRadioButton +=  "<form>"
+        tempRadioButton +=  "<label class='radio-inline'>"
+        tempRadioButton +=  "<input type='radio' name='optradio'>" + i
+        tempRadioButton +=  "</label>"
+        tempRadioButton  +=   "</form>"
+
+   }
+    
 
     for (i=1; i<Fragen.length; i++){
+
+
+              
 
         tempCards += "<div id='card" + i +"'";
         tempCards +=  "class='card'";
@@ -121,7 +128,8 @@ function insertCards(){
         tempCards += "<p class='card-text'>";
         tempCards += Fragen[i];
         tempCards += "</p>";
-        tempCards += "<a href='#' class='btn btn-primary'>Go somewhere</a>";
+        tempCards += "<p> stimmt &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp stimmt nicht </p>"
+        tempCards += tempRadioButton;
         tempCards += "</div>";
         tempCards += "</div>";
     }

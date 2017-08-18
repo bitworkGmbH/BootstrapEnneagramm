@@ -20,48 +20,27 @@ table td + td{  /* this will go to the 2nd column of the table directly */
     font-weight: bold;
 } 
 
-#content1{ 
-    background-color: lightyellow; 
-    margin-left: auto; 
+  #content1{  
+    background-color: lightyellow;  
+    /* margin-left: auto; 
     margin-right: auto;
     text-align: left;
     width: 70%; 
-    display: block;
-}
+     display: block;  */
+ }    
 
 
 #heading {
     font-weight: bold;
 }
 
-/* all cards */
 
-#textcards {
-
-    width: 20rem;
+#textcards{
+     display: none; 
 }
 
-/* 
-individual cards  */
-
- #cardx {
-    width: 20rem;
-    border-color:salmon;
-} 
-
-#cardy{
-    width: 20rem; 
-    background-color:lightpink;
-}
-
-#cardz{
-    width: 20rem; 
-    border-color:teal;
-}
-
-
-#card1{
-   background-color:aqua;  
+#cardx, #cardy, #cardz {
+    display: none;
 }
 
 
@@ -69,22 +48,35 @@ individual cards  */
 @media (max-width: 800px) {
   /* Smartphone    */
    
-th, td {
-       font-size-adjust: 0.4;
-    }   
-
-.image{
-       width: 25%;
-       height: auto;
-    }
 
 #content1{
-    background-color: lightcoral;
+    display: none;
+    /* background-color: lightcoral;
     margin-left: none;
     float:none; 
     width:auto;
-    font-size-adjust: 0.4;  
+    font-size-adjust: 0.4;   */
     }
+
+
+/* all cards */
+
+ #textcards {
+
+    width: 20rem;
+    display: inline-block;
+    color: darkblue;
+  } 
+
+
+
+#card1{
+   background-color:lightblue;  
+}
+
+
+
+
 }
 
 @media (min-width: 801px) and (max-width: 1024px) {

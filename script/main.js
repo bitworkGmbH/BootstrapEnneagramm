@@ -4,6 +4,7 @@
 window.onload = function () { 
     createTable();
     insertCards();
+    createRadioButtons();
 }
 
 
@@ -128,7 +129,7 @@ function insertCards(){
         tempCards += "<p class='card-text'>";
         tempCards += Fragen[i];
         tempCards += "</p>";
-        tempCards += "<p> stimmt &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp stimmt nicht </p>"
+        tempCards += "<div class= 'container'><div class= 'row'><div class='col-sm-6'>stimmt</div>" +  "<div class='col-sm-6'>stimmt nicht</div></div></div>";
         tempCards += tempRadioButton;
         tempCards += "</div>";
         tempCards += "</div>";
@@ -140,6 +141,19 @@ document.getElementById("textcards").innerHTML += tempCards;
 
 
 
+// create Radio Buttons dynamically: 
 
+function createRadioButtons(){
 
+    for (i=1; i<=6; i++)
+{
+    var radioInput = document.createElement('input');
+    radioInput.setAttribute('type', 'radio');
+    radioInput.setAttribute('name', "optradio");
+    radioInput.setAttribute('value', 'button' + i);
+    document.getElementById("newRadioButtons").appendChild(radioInput);
+    document.getElementById("newRadioButtons").appendChild(document.createTextNode(i + "." ))
+}
+
+}
  

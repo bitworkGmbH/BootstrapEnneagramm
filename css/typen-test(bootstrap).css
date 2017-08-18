@@ -74,7 +74,14 @@ table td + td{  /* this will go to the 2nd column of the table directly */
    background-color:lightblue;  
 }
 
+input{
+    margin: 5px !important;
 
+}
+
+.row {
+    flex-wrap: nowrap !important;
+}
 
 
 }

@@ -32,10 +32,10 @@ function createTable(){
         tempTable +=    "<td>";
         tempTable +=        j+1 + ". " ;
         tempTable +=        Fragen[j]; 
-        tempTable +=    "</td>" ;
-        tempTable +=    "<td>" ;
+        tempTable +=    "</td>";
+        tempTable +=    "<td><div class= 'scale'>";
         tempTable +=       Skala; 
-        tempTable +=    "</td>";  
+        tempTable +=    "</div></td>";  
         tempTable += "</tr>";
     }
         
@@ -51,15 +51,21 @@ function createTable(){
 
 var Ueberschrift = " Bitte erst alle 115 Fragen beantworten, dann Streifen rechts nach hinten falten und Auswertung vornehmen.";
 
-var Ueberschrift2= "<p>stimmt nicht &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;stimmt</p>";
+var Ueberschrift2= "<div class= left>stimmt nicht</div><div class= right>stimmt</div></p>";
 
 var imgArrow= "<img  src='images/double-arrow.png'>"
 
-var Skala = "0 &nbsp;&nbsp;&nbsp; 1 &nbsp;&nbsp;&nbsp; 2 &nbsp;&nbsp;&nbsp; 3 &nbsp;&nbsp;&nbsp; 4 &nbsp;&nbsp;&nbsp; 5 &nbsp;&nbsp;&nbsp; 6";
+var Skala = "0  1  2  3  4  5  6";
 
 
 
+/* <div class="container">
+    <!-- <div class="row">
+        <div class="col-sm-12hidden-xs-down col-md-6">Test 1</div>
+        <div class="col-sm-12  col-md-6">Test 2</div>
+        <div class="col-sm-12  col-md-6">Test 3</div>
 
+    </div> --> */
 
 
 // Array mit Interviewfragen:
@@ -102,19 +108,23 @@ function createCards() {
     for (i = 1; i <= Fragen.length ; i++) {
         var cardObject = document.createElement('div');
         cardObject.className = "card";
-        cardObject.innerHTML += "<h4 class='card-title'>" + i + "</h4>" + "<p class= 'card-text'>" + Fragen[i-1] + "</h4>";
-        cardObject.innerHTML += "<form>";
+
+        var html = ""
+
+        html += "<h4 class='card-title'>" + i + "</h4>" + "<p class= 'card-text'>" + Fragen[i-1] + "</h4>";
+        html += "<div id= 'einschaetzung'><div class='left'>stimmt</div>" + "<div class='right'>stimmt nicht</div></div>"
+        html += "<div class='radio'><form>";
 
         //  create six radio-button labels with unique ids for each card:
 
         for (count = 1; count <= 6; count++) {
-            cardObject.innerHTML += "<label class= 'radio-inline' id= 'newRadioButton" + i + "_" + count + "'></label>";
+            html += "<label class= 'radio-inline' id= 'newRadioButton" + i + "_" + count + "'></label>";
         }
-        cardObject.innerHTML += "</form>";
-
+        html += "</form></div>";
+        cardObject.innerHTML = html;
         // insert code into Dom
 
-        document.getElementById("test").appendChild(cardObject);
+        document.getElementById("content2").appendChild(cardObject);
 
         // create 6 radio buttons for each card plus its number(scale 1-6) and add to dom:
 

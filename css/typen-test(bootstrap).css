@@ -9,10 +9,7 @@
     min-width: 180px;
 } 
 
-/* table {
-    border-spacing: 5px;  
-    min-height: 150px;
-} */
+
 
 table td + td{  /* this will go to the 2nd column of the table directly */
     text-align: center;
@@ -20,13 +17,8 @@ table td + td{  /* this will go to the 2nd column of the table directly */
     font-weight: bold;
 } 
 
-  #content1{  
+#content1{  
     background-color: lightyellow;  
-    /* margin-left: auto; 
-    margin-right: auto;
-    text-align: left;
-    width: 70%; 
-     display: block;  */
  }    
 
 
@@ -34,57 +26,94 @@ table td + td{  /* this will go to the 2nd column of the table directly */
     font-weight: bold;
 }
 
-
-#textcards{
-     display: none; 
-}
-
-#cardx, #cardy, #cardz {
+#content2{
     display: none;
 }
 
+.left{
+
+   float: left !important;
+    margin-left: none;
+    margin-right: none;
+    text-align: left !important;
+    padding-left: none !important;
+}
+
+.right{
+    float: right !important;
+    margin-left: none;
+    margin-right: none;
+    text-align: right !important;
+}
+
+
+.scale{
+    word-spacing: 1em;
+    text-align: center;
+}
 
 
 @media (max-width: 800px) {
   /* Smartphone    */
    
 
+/* tabelle ausgeblendet: */
 #content1{
     display: none;
-    /* background-color: lightcoral;
-    margin-left: none;
-    float:none; 
-    width:auto;
-    font-size-adjust: 0.4;   */
-    }
-
+}
 
 /* all cards */
 
- #textcards {
-
-    width: 20rem;
-    display: inline-block;
+.card {
+    /* display: inline-block; */
     color: darkblue;
-  } 
-
-
-
-#card1{
-   background-color:lightblue;  
-}
-
-input{
-    margin: 5px !important;
-
-}
-
-.row {
-    flex-wrap: nowrap !important;
 }
 
 
+.card-text{
+
+    text-align: left !important;
 }
+
+
+#einschaetzung{
+
+    width: 100%;
+
+}
+
+
+.left {
+    float: left !important;
+    margin-left: none;
+    margin-right: none;
+    text-align: left !important;
+    padding-left: none !important;
+}
+
+.right{
+    float: right !important;
+    margin-left: none;
+    margin-right: none;
+    text-align: right !important;
+}
+
+
+.radio{
+   color: darkblue !important;
+   width: 100% !important;
+}
+
+.radio-inline{
+    margin-left: 0.8rem;
+}
+
+#content2{
+    display: inline-block;
+}
+
+}
+
 
 @media (min-width: 801px) and (max-width: 1024px) {
  /* Tablets */

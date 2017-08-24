@@ -5,6 +5,7 @@ window.onload = function () {
     createTable();
     // insertCards();
     createCards();
+    createObject();
     }
 
 
@@ -68,32 +69,215 @@ var Skala = "0  1  2  3  4  5  6";
     </div> --> */
 
 
-// Array mit Interviewfragen:
 
-var Fragen = ["Das Leben gelingt besser, wenn man das Positive sieht, anstatt sich am Negativen aufzuhalten.", 
-"Ich kann auch emotional sehr angespannte Situationen nüchtern und mit Abstand betrachten.", 
-"Ich arbeite gerne innerhalb einer Institution.",
-"Wichtig an einem Menschen ist, dass er etwas 'darstellt'.",
-"Ich möchte unabhängig sein.",
-"Am wichtigsten ist mir, dass sich die Menschen bei mir wohlfühlen.",
-"Für mich ist es wichtig die Zukunft zu planen, damit ich weiß, was auf mich zukommt.",
-"Wenn jemand meine Hilfe braucht, bin ich bereit, meine ganze Kraft für ihn einzusetzen.",
-"Ich möchte leidenschaftlich, emotional und mit allen Sinnen leben - auch wenn es schmerzt.",
-"Eigene und fremde Unvollkommenheit kann ich nur schwer ertragen.",
-"Erfolg und Status (Orden, Ämter, Titel) spielen für mich eine große Rolle.",
-"In der Liebe sind vor allem Anstand und Benehmen wichtig.",
-"In der Liebe sind vor allem Anstand und Benehmen wichtig.",
-"Ich engagiere mich für Randgruppen, Benachteiligte und Rechtlose (Asylsuchende, Kinder in der 3. Welt, Ausländer etc.).",
-"Das Leben ist wie ein Theaterstück, bei dem ich gleichzeitig Zuschauer und Schauspieler bin.",
-"Für mein berufliches Fortkommen bin ich bereit, Ehe, Familie oder Freunde hintanzustellen.",
-"Mich plagt oft ein schlechtes Gewissen.",
-"Ich habe den Eindruck, dass sogenannte 'Autoritäten' oft inkompetent sind, aber ich zögere meist, gegen sie vorzugehen.",
-"Ich lasse die Dinge gerne auf mich zukommen- vieles regelt sich dann schon ganz von alleine.",
-"Ich muss wissen, wohin ich gehöre.",
-"Ich genieße es, die Aufmerksamkeit anderer zu erregen und im Mittelpunkt zu stehen.",
-"Ich halte meinen Ärger oft zurück.",
-"Ich habe das Gefühl, nie 'ganz erfüllt' sein zu können.",
-"Oft ahne ich, was in anderen vorgeht, bevor sie es aussprechen."];
+
+
+
+
+
+
+
+// var questions = {};
+
+// function createObject(){
+
+//     for (i=0; i< Fragen.length; i++) {
+//         questions[i].id = i + 1;
+//         questions[i].text = Fragen[i];
+//         questions[i].value = "";
+
+//     };
+//     document.getElementById('testTest').innerHtml = questions[0];
+// }
+
+
+
+
+
+var FragenArray = [
+        
+            {
+                'id':  01,
+                'question': "Das Leben gelingt besser, wenn man das Positive sieht, anstatt sich am Negativen aufzuhalten.", 
+                'value': ""
+            }, 
+            
+            {
+                'id':  02,
+                'question': "Ich kann auch emotional sehr angespannte Situationen nüchtern und mit Abstand betrachten.", 
+                'value': " "
+            },
+   
+            {
+                'id': 03,
+                'question': "Ich arbeite gerne innerhalb einer Institution.",
+                'value': ""
+            },
+            
+            {
+                'id':  04,
+                'question': "Wichtig an einem Menschen ist, dass er etwas 'darstellt'.", 
+                'value': ""
+            }, 
+
+            {
+                'id':  05,
+                'question': "Ich möchte unabhängig sein.", 
+                'value': ""
+            }, 
+
+
+            {
+                'id':  06,
+                'question': "Am wichtigsten ist mir, dass sich die Menschen bei mir wohlfühlen.", 
+                'value': ""
+            }, 
+
+            {
+                'id':  07,
+                'question': "Für mich ist es wichtig die Zukunft zu planen, damit ich weiß, was auf mich zukommt.", 
+                'value': ""
+            }, 
+
+            {
+                'id':  08,
+                'question': "Wenn jemand meine Hilfe braucht, bin ich bereit, meine ganze Kraft für ihn einzusetzen.", 
+                'value': ""
+            }, 
+            
+            {
+                'id':  09,
+                'question': "Ich möchte leidenschaftlich, emotional und mit allen Sinnen leben - auch wenn es schmerzt.", 
+                'value': ""
+            }, 
+            
+            {
+                'id':  10,
+                'question': "Eigene und fremde Unvollkommenheit kann ich nur schwer ertragen.", 
+                'value': "",
+            }, 
+            
+            {
+                'id':  11,
+                'question': "Erfolg und Status (Orden, Ämter, Titel) spielen für mich eine große Rolle.", 
+                'value': ""
+            }, 
+            
+                    
+            {
+                'id':  12,
+                'question': "In der Liebe sind vor allem Anstand und Benehmen wichtig.", 
+                'value': ""
+            }, 
+            
+            {
+                'id':  13,
+                'question': "Ich engagiere mich für Randgruppen, Benachteiligte und Rechtlose (Asylsuchende, Kinder in der 3. Welt, Ausländer etc.).", 
+                'value': ""
+            }, 
+            
+            {
+                'id':  14,
+                'question': "Ich engagiere mich für Randgruppen, Benachteiligte und Rechtlose (Asylsuchende, Kinder in der 3. Welt, Ausländer etc.).",
+                'value': ""
+            }, 
+            
+            {
+                'id':  15,
+                'question': "Das Leben ist wie ein Theaterstück, bei dem ich gleichzeitig Zuschauer und Schauspieler bin.", 
+                'value': ""
+            }, 
+            
+            {
+                'id':  16,
+                'question': "Für mein berufliches Fortkommen bin ich bereit, Ehe, Familie oder Freunde hintanzustellen.", 
+                'value': ""
+            }, 
+            
+            {
+                'id': 17,
+                'question': "Mich plagt oft ein schlechtes Gewissen.",
+                'value': ""
+            }, 
+            
+            {
+                'id':  18,
+                'question': "Ich habe den Eindruck, dass sogenannte 'Autoritäten' oft inkompetent sind, aber ich zögere meist, gegen sie vorzugehen.",
+                'value': ""
+            }, 
+            
+            {
+                'id':  19,
+                'question': "Ich lasse die Dinge gerne auf mich zukommen- vieles regelt sich dann schon ganz von alleine.", 
+                'value': ""
+            }, 
+            
+            {
+                'id':  20,
+                'question': "Ich muss wissen, wohin ich gehöre.",
+                'value': ""
+            }, 
+            
+            {
+                'id':  21,
+                'question': "Ich genieße es, die Aufmerksamkeit anderer zu erregen und im Mittelpunkt zu stehen.",
+                'value': ""
+            }, 
+            
+            {
+                'id':  22,
+                'question': "Ich halte meinen Ärger oft zurück.", 
+                'value': ""
+            },  
+            
+            {
+                'id':  23,
+                'question': "Ich habe das Gefühl, nie 'ganz erfüllt' sein zu können.", 
+                'value': ""
+            }, 
+
+            {
+                'id':  24,
+                'question': "Oft ahne ich, was in anderen vorgeht, bevor sie es aussprechen.", 
+                'value': ""
+            } 
+        ]   
+
+
+
+
+
+        function QuestionItem(id, question, value) {
+            this.id = id;
+            this.question = question;
+            this.value = function (){ }               
+            }
+        }
+
+
+        
+        var QuestionItem{};
+
+        QuestionItem['id'] = 
+        QuestionItem['question'] =
+        QuestionItem['value'] = 
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
